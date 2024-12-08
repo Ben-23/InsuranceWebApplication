@@ -5,11 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomepageComponent } from './module/homepage/homepage.component';
+import { ServicesComponent } from './module/services/services.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AboutComponent } from './module/about/about.component';
+import { ContactComponent } from './module/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    ServicesComponent,
+    NavbarComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
