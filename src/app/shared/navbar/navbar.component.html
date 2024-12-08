@@ -34,10 +34,12 @@
             <img class="img-fluid me-3" src="assets/img/icon/icon-02-primary.png" alt="" />Insure
         </h1>
     </a>
-    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
         <div class="navbar-nav mx-auto bg-light rounded pe-4 py-3 py-lg-0">
             <a routerLink="/" class="nav-item nav-link">Home</a>
             <a routerLink="/About" class="nav-item nav-link">About Us</a>
@@ -53,9 +55,11 @@
                 </div>
             </div>
             <a routerLink="/ContactUs" class="nav-item nav-link">Contact Us</a>
+            <a *ngIf="!isCollapsed" href="" class="nav-item nav-link">Get A Quote</a>
+            <a *ngIf="!isCollapsed" href="" class="nav-item nav-link">Login</a>
         </div>
     </div>
-    <a href="" class="btn btn-primary px-3 d-none d-lg-block">Get A Quote</a>
-    <a href="" class="btn btn-square px-3 d-none d-lg-block ms-4">Login</a>
+    <a *ngIf="isCollapsed" href="" class="btn btn-primary px-3 d-none d-lg-block">Get A Quote</a>
+    <a *ngIf="isCollapsed" href="" class="btn btn-square px-3 d-none d-lg-block ms-4">Login</a>
 </nav>
 <!-- Navbar End -->
